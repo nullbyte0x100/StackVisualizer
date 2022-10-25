@@ -62,7 +62,7 @@ class StackVisualizer:
           self.set_index()
 
       def heading_and_sub_heading(self): #Main heading, sub heading and indicator label set
-          self.heading_name = Label(self.stack_canvas, text="Stack Visualizer", bg="white", fg="black", font=("Monaco",25,"bold"))
+          self.heading_name = Label(self.stack_canvas, text="Candy Dispenser", bg="white", fg="black", font=("Monaco",25,"bold"))
           self.heading_name.place(x=140,y=30)
 
           self.sub_heading = Label(self.stack_canvas, text="Element index", bg="white", fg="black",  font=("Monaco",15))
@@ -129,7 +129,7 @@ class StackVisualizer:
 
               self.element_take_entry.focus()
 
-              self.add_btn = Button(self.window, text="Add", font=("RF Rostin", 10, "bold"), bg="black", fg="white",padx=3, pady=3, command=lambda: self.make_block('<Return>'))
+              self.add_btn = Button(self.window, text="Add candy", font=("RF Rostin", 10, "bold"), bg="black", fg="white",padx=3, pady=3, command=lambda: self.make_block('<Return>'))
               self.add_btn.place(x=400, y=560)
               self.window.bind('<Return>',self.make_block)
 
