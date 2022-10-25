@@ -78,7 +78,7 @@ class StackVisualizer:
 
           self.pop_btn = Button(self.window, text="Remove candy", fg="white", bg="black", font=("RF Rostin", 12),
                                 command=self.pop_data)
-          self.pop_btn.place(x=400, y=535)
+          self.pop_btn.place(x=450, y=535)
 
           self.top_index = Label(self.window, text="<-- top", fg="black", bg="white", font=("RF Rostin", 20, "bold"))
           self.top_index.place(x=310, y=self.top_y)
