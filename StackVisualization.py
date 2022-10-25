@@ -65,18 +65,18 @@ class StackVisualizer:
           self.heading_name = Label(self.stack_canvas, text="Candy Dispenser", bg="white", fg="black", font=("Monaco",25,"bold"))
           self.heading_name.place(x=140,y=30)
 
-          self.sub_heading = Label(self.stack_canvas, text="Element index", bg="white", fg="black",  font=("Monaco",15))
+          self.sub_heading = Label(self.stack_canvas, text="Candy index", bg="white", fg="black",  font=("Monaco",12))
           self.sub_heading.place(x=20,y=300)
 
-          self.stack_indicator = Label(self.stack_canvas, text="Stack ", bg="white", fg="black",  font=("Monaco",15))
+          self.stack_indicator = Label(self.stack_canvas, text="Stack ", bg="white", fg="black",  font=("Monaco",10))
           self.stack_indicator.place(x=180,y=450)
 
       def make_buttons(self): #Make Buttons to access and make top with arrow
-          self.push_btn = Button(self.window,text="Push ",fg="white",bg="black",font=("RF Rostin",15,"bold"),
+          self.push_btn = Button(self.window,text="Add candy ",fg="white",bg="black",font=("RF Rostin",12),
                                  command=self.push_element)
           self.push_btn.place(x=30,y=535)
 
-          self.pop_btn = Button(self.window, text="POP", fg="white", bg="black", font=("RF Rostin", 15, "bold"),
+          self.pop_btn = Button(self.window, text="Remove candy", fg="white", bg="black", font=("RF Rostin", 12),
                                 command=self.pop_data)
           self.pop_btn.place(x=500, y=535)
 
