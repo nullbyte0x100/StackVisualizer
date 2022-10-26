@@ -128,9 +128,10 @@ class StackVisualizer:
           else:
             messagebox.showinfo("Stack empty?","False")
       def top(self): #return the to element
-          messagebox.showinfo("Top element",f"Top element {self.top_index}")
+          messagebox.showinfo("Size",f"The top element is {len(self.last_label_value_keep)}")
+
       def  size(self):
-          pass
+          messagebox.showinfo("Size",f"The size of stack is {len(self.last_label_value_keep)}")
       def push_element(self): #Push button action
           if len(self.last_label_value_keep) == 6:
              messagebox.showerror("Overflow","Stack is full")
