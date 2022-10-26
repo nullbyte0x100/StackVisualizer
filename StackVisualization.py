@@ -72,14 +72,27 @@ class StackVisualizer:
           self.stack_indicator.place(x=180,y=450)
 
       def make_buttons(self): #Make Buttons to access and make top with arrow
+          #push button
           self.push_btn = Button(self.window,text="Add candy ",fg="white",bg="black",font=("RF Rostin",12),
                                  command=self.push_element)
           self.push_btn.place(x=30,y=535)
-
+         #pop Button
           self.pop_btn = Button(self.window, text="Remove candy", fg="white", bg="black", font=("RF Rostin", 12),
                                 command=self.pop_data)
           self.pop_btn.place(x=450, y=535)
-
+          #is empty button
+          self.isempty_button=Button(self.window,text="Is empty",fg="white",bg="black",font=("RF Rostin",12),
+                              command=self.is_empty)
+          self.isempty_button.place(x=450,y=320)
+          #top_button
+          self.top_button=Button(self.window,text="Top",fg="white",bg="black",font=("RF Rostin",12),
+                                 command=self.top)
+          self.top_button.place(x=450,y=260)
+          #size button
+          self.size_button=Button(self.window,text="Size",bg="black",fg="white",font=("RF Rostin",12),
+                                  command=self.size
+                                  )
+          self.size_button.place(x=450,y=200)
           self.top_index = Label(self.window, text="<-- top", fg="black", bg="white", font=("RF Rostin", 20, "bold"))
           self.top_index.place(x=310, y=self.top_y)
 
@@ -109,7 +122,15 @@ class StackVisualizer:
 
           self.index_5 = Label(self.stack_canvas, text="5", fg="black", bg="white", font=("RF Rostin", 15, "bold"))
           self.index_5.place(x=220, y=199)
-
+      def is_empty(self): #check if stack is empty
+          if len(self.last_label_value_keep)==0:
+              messagebox.showinfo("Stack empty?","True")
+          else:
+            messagebox.showinfo("Stack empty?","False")
+      def top(self): #return the to element
+          messagebox.showinfo("Top element",f"Top element {self.top_index}")
+      def  size(self):
+          pass
       def push_element(self): #Push button action
           if len(self.last_label_value_keep) == 6:
              messagebox.showerror("Overflow","Stack is full")
@@ -119,18 +140,18 @@ class StackVisualizer:
               self.push_btn.config(state=DISABLED)
 
               #Element value give diagram set
-              self.element_take_label = Label(self.window,text="Enter the element: ",
+              self.element_take_label = Label(self.window,text="Enter element: ",
                                          bg="white",fg="black",font=("RF Rostin",12,"bold"))
               self.element_take_label.place(x=170,y=536)
 
               self.element_take_entry = Entry(self.window,font=("RF Rostin",13,"bold"),bg="white",
                                               fg="black",relief=SUNKEN,bd=5, textvar=self.value_entry)
-              self.element_take_entry.place(x=167,y=560)
+              self.element_take_entry.place(x=175,y=560)
 
               self.element_take_entry.focus()
 
-              self.add_btn = Button(self.window, text="Add candy", font=("RF Rostin", 10, "bold"), bg="black", fg="white",padx=3, pady=3, command=lambda: self.make_block('<Return>'))
-              self.add_btn.place(x=400, y=560)
+              self.add_btn = Button(self.window, text="Add ", font=("RF Rostin", 10, "bold"), bg="black", fg="white",padx=3, pady=3, command=lambda: self.make_block('<Return>'))
+              self.add_btn.place(x=360, y=560)
               self.window.bind('<Return>',self.make_block)
 
       def make_block(self,e):#Element containing block making
@@ -155,7 +176,7 @@ class StackVisualizer:
               self.stack_canvas.delete(self.block_make)
               self.entry_number.destroy()
               self.value_entry.set(" ")
-              messagebox.showerror("Wrong happen", "Only integers allowed")
+              messagebox.showerror("Error", "Only integers allowed")
               self.pop_btn.config(state=NORMAL)
               self.push_btn.config(state=NORMAL)
               pass
