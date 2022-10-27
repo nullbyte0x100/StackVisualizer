@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import time
 
-class StackVisualizer:
+class Stack:
       def __init__(self, root):
           self.window = root
           self.window.config(bg="white")
@@ -266,5 +266,5 @@ if __name__ == '__main__':
     window.geometry("600x600")
     window.maxsize(600,600)
     window.minsize(600,600)
-    StackVisualizer(window)
+    Stack(window)
     window.mainloop()
